@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include "Board.h"
+#include "Objects/Board.h"
+#include "Objects/Checkers.h"
 
 //using namespace sf;
 
@@ -14,6 +15,9 @@ int main()
     {
         Board board;
         board.makeBoard();
+
+        Checkers checkers;
+        checkers.makeCheckers();
 
         // Обрабатываем очередь событий в цикле
         sf::Event event;
