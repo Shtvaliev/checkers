@@ -8,4 +8,6 @@ private:
     sf::Texture texture;
 public:
     void makeCheckers();
+    void moveCheckers();
+    void drawCheckers();
 };
