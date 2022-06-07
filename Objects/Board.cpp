@@ -25,6 +25,12 @@ void Board::makeBoard() {
                 tiles[i].setFillColor(sf::Color(200, 200, 200));
             }
         }
-        window.draw(tiles[i]);
+//        window.draw(tiles[i]);
+    }
+}
+
+void Board::drawBoard() {
+    for (sf::CircleShape& it : tiles){
+        window.draw(it);
     }
 }
