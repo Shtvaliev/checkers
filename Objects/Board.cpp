@@ -6,7 +6,7 @@
 
 extern sf::RenderWindow window;
 
-void Board::makeBoard() {
+void Board::make() {
     for (int i=0; i<64; i++){
         tiles[i].setRadius(130);
         tiles[i].setPointCount(4);
@@ -29,7 +29,7 @@ void Board::makeBoard() {
     }
 }
 
-void Board::drawBoard() {
+void Board::draw() {
     for (sf::CircleShape& it : tiles){
         window.draw(it);
     }

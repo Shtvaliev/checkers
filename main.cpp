@@ -1,11 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include "Objects/Board.h"
 #include "Objects/Checkers.h"
-#include <iostream>
+
 
 //using namespace sf;
 
-sf::RenderWindow window(sf::VideoMode(1500, 1500), "checkers");
+sf::RenderWindow window(sf::VideoMode(1500, 1500), "checker");
 bool display = true;
 
 int main()
@@ -21,12 +21,12 @@ int main()
     while (window.isOpen())
     {
         if (firstBoard) {
-            board.makeBoard();
+            board.make();
             firstBoard = false;
         }
 
         if (firstCheckers) {
-            checkers.makeCheckers();
+            checkers.make();
             firstCheckers = false;
         }
 
@@ -41,20 +41,19 @@ int main()
 
             if (event.type == sf::Event::MouseButtonPressed){
                 if (event.key.code == sf::Mouse::Left){
-                    checkers.moveCheckers();
+                    checkers.showDots();
                 }
             }
         }
 
 
         // Отрисовка окна
-//        window.clear();
         if (display) {
-            board.drawBoard();
-            checkers.drawCheckers();
+//            window.clear();
+            board.draw();
+            checkers.draw();
             window.display();
             display = false;
-//            std::cout<<display;
         }
     }
 

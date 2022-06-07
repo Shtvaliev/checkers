@@ -5,6 +5,6 @@ class Board{
 private:
     sf::CircleShape tiles[64];
 public:
-    void makeBoard();
-    void drawBoard();
+    void make();
+    void draw();
 };
