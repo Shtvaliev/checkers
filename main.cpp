@@ -12,10 +12,12 @@ int main()
 {
     window.setFramerateLimit(60);
 
+    bool step (false);
     bool firstBoard = true;
     bool firstCheckers = true;
     Board board;
     Checkers checkers;
+    Checker* currentChecker = nullptr;
 
     // Главный цикл приложения. Выполняется, пока открыто окно
     while (window.isOpen())
@@ -31,7 +33,7 @@ int main()
         }
 
         // Обрабатываем очередь событий в цикле
-        sf::Event event;
+        sf::Event event{};
         while (window.pollEvent(event))
         {
             // Пользователь нажал на «крестик» и хочет закрыть окно?
@@ -41,7 +43,14 @@ int main()
 
             if (event.type == sf::Event::MouseButtonPressed){
                 if (event.key.code == sf::Mouse::Left){
-                    checkers.showDots();
+                    if (!currentChecker) {
+                        currentChecker = checkers.showDots(step);
+                        if (currentChecker){
+                            step = !step;
+                        }
+                    } else {
+                        currentChecker = checkers.move(currentChecker);
+                    }
                 }
             }
         }
