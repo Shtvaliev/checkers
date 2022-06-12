@@ -10,12 +10,17 @@ private:
                                     rightUp, rightDown;
     Dot* _father;
 public:
-    Dot() : dot(), leftDown(nullptr), leftUp(nullptr), rightDown(nullptr), rightUp(nullptr) {}
+    Dot() : dot(),
+            leftDown(nullptr),
+            leftUp(nullptr),
+            rightDown(nullptr),
+            rightUp(nullptr),
+            _father(nullptr) {}
     Dot(Dot const &it) : dot(it.dot),
                         leftUp(it.leftUp.get()),
                         leftDown(it.leftDown.get()),
                         rightDown(it.rightDown.get()),
-                        rightUp(it.rightUp.get()) {}
+                        rightUp(it.rightUp.get()) { _father = it._father;}
     void setLeftUp(int x, int y, Dot* father);
     Dot* getLeftUp() {return leftUp.get();}
     void setLeftDown(int x, int y, Dot* father);

@@ -16,9 +16,11 @@ void Checkers::make() {
         checker[i].getChecker()->
             setPosition((i % 4) * 182 * 2 + 33 + 182 * (i / 4 % 2),
                         (i / 4) * 182 + 37);
+//        sf::Vector2i it(checker[i].getChecker()->getPosition());
+//        checker[i].getDot()->getDot()->setRadius(1);
         checker[i].getDot()->getDot()->
-        setPosition((i % 4) * 182 * 2 + 33 + 182 * (i / 4 % 2),
-                    (i / 4) * 182 + 37);
+            setPosition((i % 4) * 182 * 2 + 33 + 182 * (i / 4 % 2) + 25,
+                        (i / 4) * 182 + 37 + 25);
         checker[i].setTexture("../Resources/checker.png");
 
 //        window.draw(*checker[i].getChecker());
@@ -28,8 +30,14 @@ void Checkers::make() {
         checker[i].setMissis(false);
         checker[i].setColor(true);
         checker[i].getChecker()->setRadius(75);
-        checker[i].getChecker()->setPosition((i % 4) * 182 * 2 + 33 + 182 * (i / 4 % 2),
-                                             (i / 4) * 182 + 37 + 182 * 2);
+        checker[i].getChecker()->
+                setPosition((i % 4) * 182 * 2 + 33 + 182 * (i / 4 % 2),
+                             (i / 4) * 182 + 37 + 182 * 2);
+//        sf::Vector2i it(checker[i].getChecker()->getPosition());
+        checker[i].getDot()->getDot()->setRadius(0);
+        checker[i].getDot()->getDot()->
+                setPosition((i % 4) * 182 * 2 + 33 + 182 * (i / 4 % 2) + 25,
+                            (i / 4) * 182 + 37 + 182 * 2 + 25);
         checker[i].setTexture("../Resources/checker.png");
         checker[i].getChecker()->setFillColor(sf::Color(170, 140, 80));
 
@@ -98,7 +106,7 @@ void Checkers::setDot(bool step, Dot* dot, Dot* fa) {
                 dot->setLeftDown(it.getChecker()->getPosition().x - 182 + 10,
                                  it.getChecker()->getPosition().y + 182 +10,
                                  dot);
-                setDot(step, dot->getLeftDown(), fa);
+//                setDot(step, dot->getLeftDown(), fa);
             }
         }
     }
@@ -114,16 +122,16 @@ Checker * Checkers::showDots(bool step) {
                 int f = 1;
                 for (Checker& it2 : checker) {
                     if (it2.getChecker()->getGlobalBounds().
-                    contains(it.getChecker()->getPosition().x - 182 + 10,
-                             it.getChecker()->getPosition().y + 182 + 10)) {
+                    contains(it.getChecker()->getPosition().x - 182 + 120,
+                             it.getChecker()->getPosition().y + 182 + 120)) {
                         f = 2;
                         for (Checker& it3 : checker) {
-                            if (!it3.getChecker()->getGlobalBounds().
+                            if (it3.getChecker()->getGlobalBounds().
                                 contains(it.getChecker()->
-                                                 getPosition().x - 2 * 182 + 30,
+                                                 getPosition().x - 2 * 182 + 120,
                                          it.getChecker()->
                                                  getPosition().y + 2 * 182 +
-                                                                        30)) {
+                                                                        120)) {
                                 f = 0;
                             }
                         }
@@ -142,17 +150,17 @@ Checker * Checkers::showDots(bool step) {
                 for (Checker& it2 : checker) {
                     if (it2.getChecker()->getGlobalBounds().
                             contains(it.getChecker()->
-                                            getPosition().x + 182 + 10,
+                                            getPosition().x + 182 + 120,
                                      it.getChecker()->
-                                            getPosition().y + 182 + 10)) {
+                                            getPosition().y + 182 + 120)) {
                         f = 2;
                         for (Checker& it3 : checker) {
                             if (it3.getChecker()->getGlobalBounds().
                                 contains(it.getChecker()->
-                                                 getPosition().x + 2 * 182 + 30,
+                                                 getPosition().x + 2 * 182 + 120,
                                          it.getChecker()->
                                                  getPosition().y + 2 * 182 +
-                                                                        30)) {
+                                                                        120)) {
                                 f = 0;
                             }
                         }
@@ -165,6 +173,7 @@ Checker * Checkers::showDots(bool step) {
                               it.getDot());
                     display = true;
                 }
+
                 if(!it.getDot()->getLeftUp() &&
                         !it.getDot()->getLeftDown() &&
                         !it.getDot()->getRightUp() &&
@@ -180,17 +189,17 @@ Checker * Checkers::showDots(bool step) {
                 for (Checker& it2 : checker) {
                     if (it2.getChecker()->getGlobalBounds().
                         contains(it.getChecker()->
-                                            getPosition().x - 182 + 10,
+                                            getPosition().x - 182 + 120,
                                  it.getChecker()->
-                                            getPosition().y - 182 + 10)) {
+                                            getPosition().y - 182 + 120)) {
                         f = 2;
                         for (Checker& it3 : checker) {
                             if (it3.getChecker()->getGlobalBounds().
                                 contains(it.getChecker()->
-                                                 getPosition().x - 2 * 182 + 30,
+                                                 getPosition().x - 2 * 182 + 120,
                                          it.getChecker()->
                                                  getPosition().y - 2 * 182 +
-                                                                        30)) {
+                                                                        120)) {
                                 f = 0;
                             }
                         }
@@ -202,10 +211,6 @@ Checker * Checkers::showDots(bool step) {
                               it.getChecker()->
                                       getPosition().y - f*182,
                               it.getDot());
-                    if (f == 2) {
-                        setDot(step, it.getDot()->getLeftUp(),
-                               it.getDot()->getLeftUp());
-                    }
                     display = true;
                 }
 
@@ -213,17 +218,17 @@ Checker * Checkers::showDots(bool step) {
                 for (Checker& it2 : checker) {
                     if (it2.getChecker()->getGlobalBounds().
                             contains(it.getChecker()->
-                                             getPosition().x + 182 + 10,
+                                             getPosition().x + 182 + 120,
                                      it.getChecker()->
-                                             getPosition().y - 182 + 10)) {
+                                             getPosition().y - 182 + 120)) {
                         f = 2;
                         for (Checker& it3 : checker) {
-                            if (!it3.getChecker()->getGlobalBounds().
+                            if (it3.getChecker()->getGlobalBounds().
                                 contains(it.getChecker()->
-                                                 getPosition().x + 2 * 182 + 30,
+                                                 getPosition().x + 2 * 182 + 120,
                                          it.getChecker()->
                                                  getPosition().y - 2 * 182 +
-                                                                        30)) {
+                                                                        120)) {
                                 f = 0;
                             }
                         }
@@ -249,14 +254,21 @@ Checker * Checkers::showDots(bool step) {
 }
 
 void Checkers::cleanUp(Dot* dot) {
-    sf::Vector2i middle((dot->getDot()->getPosition().x +
-                                dot->getFather()->getDot()->getPosition().x)/2,
-                        (dot->getDot()->getPosition().y +
-                                dot->getFather()->getDot()->getPosition().y)/2);
-    for (Checker& it : checker){
-        if (it.getChecker()->getGlobalBounds().contains(middle.x, middle.y)){
-            it.delChecker();
+    if (dot->getFather()) {
+        int x1(dot->getDot()->getPosition().x);
+        int x2(dot->getFather()->getDot()->getPosition().x);
+        int y1(dot->getDot()->getPosition().y);
+        int y2(dot->getFather()->getDot()->getPosition().y);
+        int x = (x1 + x2) / 2 + 120;
+        int y = (y1 + y2) / 2 + 120;
+//        sf::Vector2i middle(x, y);
+        for (Checker &it: checker) {
+            if (it.getChecker()->getGlobalBounds().contains(x,y)) {
+                it.delChecker();
+//                it.getChecker()->setPosition(0, 0);
+            }
         }
+        cleanUp(dot->getFather());
     }
 }
 
@@ -270,6 +282,7 @@ Checker* Checkers::move(Checker *ch) {
         sf::Vector2i newPos(endDot->getDot()->getPosition());
         cleanUp(endDot);
         ch->getChecker()->setPosition(newPos.x - 25, newPos.y - 25);
+        ch->getDot()->getDot()->setPosition(newPos.x, newPos.y);
         ch->getDot()->resetChildren();
         display = true;
         return nullptr;
