@@ -1,13 +1,17 @@
 #pragma once
+#include "Dot.h"
 #include <SFML/Graphics.hpp>
-
+#include <string>
+#include "Checker.h"
 
 class Checkers {
 private:
-    sf::CircleShape checkers[24];
-    sf::Texture texture;
+    Checker checker[24];
 public:
-    void makeCheckers();
-    void moveCheckers();
-    void drawCheckers();
+    void make();
+    Checker* move(Checker* ch);
+    void draw();
+    Checker* showDots(bool step);
+    void setDot(bool step, Dot* dot, Dot* fa);
+    void cleanUp(Dot* dot);
 };

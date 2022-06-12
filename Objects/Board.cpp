@@ -6,8 +6,10 @@
 
 extern sf::RenderWindow window;
 
-void Board::makeBoard() {
-    for (int i=0; i<64; i++){
+void Board::make() {
+
+    const int MaxTiles = 64;
+    for (int i=0; i<MaxTiles; ++i){
         tiles[i].setRadius(130);
         tiles[i].setPointCount(4);
         tiles[i].rotate(45);
@@ -25,11 +27,10 @@ void Board::makeBoard() {
                 tiles[i].setFillColor(sf::Color(200, 200, 200));
             }
         }
-//        window.draw(tiles[i]);
     }
 }
 
-void Board::drawBoard() {
+void Board::draw() {
     for (sf::CircleShape& it : tiles){
         window.draw(it);
     }

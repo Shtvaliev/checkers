@@ -1,37 +1,39 @@
 #include <SFML/Graphics.hpp>
 #include "Objects/Board.h"
 #include "Objects/Checkers.h"
-#include <iostream>
+
 
 //using namespace sf;
 
-sf::RenderWindow window(sf::VideoMode(1500, 1500), "checkers");
+sf::RenderWindow window(sf::VideoMode(1500, 1500), "checker");
 bool display = true;
 
 int main()
 {
     window.setFramerateLimit(60);
 
+    bool step (false);
     bool firstBoard = true;
     bool firstCheckers = true;
     Board board;
     Checkers checkers;
+    Checker* currentChecker = nullptr;
 
     // Главный цикл приложения. Выполняется, пока открыто окно
     while (window.isOpen())
     {
         if (firstBoard) {
-            board.makeBoard();
+            board.make();
             firstBoard = false;
         }
 
         if (firstCheckers) {
-            checkers.makeCheckers();
+            checkers.make();
             firstCheckers = false;
         }
 
         // Обрабатываем очередь событий в цикле
-        sf::Event event;
+        sf::Event event{};
         while (window.pollEvent(event))
         {
             // Пользователь нажал на «крестик» и хочет закрыть окно?
@@ -41,20 +43,26 @@ int main()
 
             if (event.type == sf::Event::MouseButtonPressed){
                 if (event.key.code == sf::Mouse::Left){
-                    checkers.moveCheckers();
+                    if (!currentChecker) {
+                        currentChecker = checkers.showDots(step);
+                        if (currentChecker){
+                            step = !step;
+                        }
+                    } else {
+                        currentChecker = checkers.move(currentChecker);
+                    }
                 }
             }
         }
 
 
         // Отрисовка окна
-//        window.clear();
         if (display) {
-            board.drawBoard();
-            checkers.drawCheckers();
+//            window.clear();
+            board.draw();
+            checkers.draw();
             window.display();
             display = false;
-//            std::cout<<display;
         }
     }
 
