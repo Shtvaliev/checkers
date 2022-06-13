@@ -6,5 +6,5 @@ private:
     sf::CircleShape tiles[64];
 public:
     void make();
-    void draw();
+    void draw(sf::RenderWindow& window);
 };

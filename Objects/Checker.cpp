@@ -4,8 +4,9 @@
 
 #include "Checker.h"
 
-extern sf::RenderWindow window;
-extern bool display;
+//extern sf::RenderWindow window;
+//extern bool display;
+//extern Window window;
 
 void Checker::setTexture(std::string s){
     texture.loadFromFile(s);

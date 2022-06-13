@@ -4,8 +4,9 @@
 
 #include "Checkers.h"
 
-extern sf::RenderWindow window;
-extern bool display;
+//extern sf::RenderWindow window;
+//extern bool display;
+//extern Window window;
 
 
 void Checkers::make() {
@@ -39,7 +40,8 @@ void Checkers::make() {
                 setPosition((i % 4) * 182 * 2 + 33 + 182 * (i / 4 % 2) + 25,
                             (i / 4) * 182 + 37 + 182 * 2 + 25);
         checker[i].setTexture("../Resources/checker.png");
-        checker[i].getChecker()->setFillColor(sf::Color(170, 140, 80));
+        checker[i].getChecker()->setFillColor(sf::Color(170,
+                                                        140, 80));
 
 //        window.draw(checker[i]);
     }
@@ -113,7 +115,7 @@ void Checkers::setDot(bool step, Dot* dot, Dot* fa) {
 }
 
 
-Checker * Checkers::showDots(bool step) {
+Checker * Checkers::showDots(bool step, sf::RenderWindow& window, bool& display) {
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     for (Checker& it : checker){
         if (it.getChecker()->getGlobalBounds().contains(mousePos.x,
@@ -272,7 +274,7 @@ void Checkers::cleanUp(Dot* dot) {
     }
 }
 
-Checker* Checkers::move(Checker *ch) {
+Checker* Checkers::move(Checker *ch, sf::RenderWindow& window, bool& display) {
     try {
         sf::Vector2i mousePos = sf::Mouse::getPosition(window);
         if (!findDot(ch->getDot(), mousePos)){
@@ -295,10 +297,10 @@ Checker* Checkers::move(Checker *ch) {
 
 
 
-void Checkers::draw(){
+void Checkers::draw(sf::RenderWindow& window){
     for (Checker& it : checker) {
         window.draw(*it.getChecker());
-        it.drawDot();
+        it.drawDot(window);
     }
 }
 

@@ -2,6 +2,7 @@
 #include "Dot.h"
 #include <SFML/Graphics.hpp>
 #include <string>
+//#include "Window.h"
 
 class Checker {
 private:
@@ -18,7 +19,7 @@ public:
     void setColor(bool f){ color = f;}
     void setTexture(std::string s);
     void setDot(std::string s, int x, int y, Dot* fa);
-    void drawDot(){ dot.draw();}
+    void drawDot(sf::RenderWindow& window){ dot.draw(window);}
     void delChecker();
 //    void setDel(bool f){ deleted = f;}
 //    bool ifDel(){ return deleted;}
