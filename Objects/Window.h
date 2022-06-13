@@ -17,6 +17,8 @@ private:
     Board _board;
     Checkers _checkers;
     Checker* _currentChecker;
+    const int _Wight;// = 8;
+    const int _Step;// = 182;
 public:
     Window();
     sf::RenderWindow* getWindow(){ return &_window;}

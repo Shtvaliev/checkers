@@ -7,12 +7,15 @@
 
 class Checkers {
 private:
-    Checker checker[24];
+    Checker _checker[24];
 public:
-    void make();
+    void make(int wight, int step);
     Checker* move(Checker* ch, sf::RenderWindow& window, bool& display);
     void draw(sf::RenderWindow& window);
-    Checker* showDots(bool step, sf::RenderWindow& window, bool& display);
+    Checker* showDots(bool step,
+                      sf::RenderWindow& window,
+                      bool& display,
+                      const int Step);
     void setDot(bool step, Dot* dot, Dot* fa);
     void cleanUp(Dot* dot);
 };

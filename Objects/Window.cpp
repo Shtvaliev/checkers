@@ -7,23 +7,25 @@
 
 Window::Window() : _window(sf::VideoMode(1500,
                                                 1500),
-                                                "checker"),
+                                                "_checker"),
                   _display(true),
                   _firstBoard(true),
                   _firstCheckers(true),
-                  _currentChecker(nullptr)
+                  _currentChecker(nullptr),
+                  _Wight(8),
+                  _Step(182)
 {
     _window.setFramerateLimit(60);
 
     while (_window.isOpen())
     {
         if (_firstBoard) {
-            _board.make();
+            _board.make(_Wight, _Step);
             _firstBoard = false;
         }
 
         if (_firstCheckers) {
-            _checkers.make();
+            _checkers.make(_Wight, _Step);
             _firstCheckers = false;
         }
 
@@ -41,7 +43,8 @@ Window::Window() : _window(sf::VideoMode(1500,
                     if (!_currentChecker) {
                         _currentChecker = _checkers.showDots(_step,
                                                              _window,
-                                                             _display);
+                                                             _display,
+                                                             _Step);
                         if (_currentChecker){
                             _step = !_step;
                         }
