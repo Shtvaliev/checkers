@@ -34,5 +34,5 @@ public:
     void resetChildren();
     Dot* getFather() { return _father;}
 
-    void draw();
+    void draw(sf::RenderWindow& window);
 };

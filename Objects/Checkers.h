@@ -3,15 +3,19 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Checker.h"
+//#include "Window.h"
 
 class Checkers {
 private:
-    Checker checker[24];
+    Checker _checker[24];
 public:
-    void make();
-    Checker* move(Checker* ch);
-    void draw();
-    Checker* showDots(bool step);
+    void make(int wight, int step);
+    Checker* move(Checker* ch, sf::RenderWindow& window, bool& display);
+    void draw(sf::RenderWindow& window);
+    Checker* showDots(bool step,
+                      sf::RenderWindow& window,
+                      bool& display,
+                      const int Step);
     void setDot(bool step, Dot* dot, Dot* fa);
     void cleanUp(Dot* dot);
 };

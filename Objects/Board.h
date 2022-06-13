@@ -3,8 +3,8 @@
 
 class Board{
 private:
-    sf::CircleShape tiles[64];
+    sf::CircleShape _tiles[64];
 public:
-    void make();
-    void draw();
+    void make(int wight, int step);
+    void draw(sf::RenderWindow& window);
 };

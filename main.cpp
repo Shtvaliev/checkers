@@ -1,70 +1,8 @@
-#include <SFML/Graphics.hpp>
-#include "Objects/Board.h"
-#include "Objects/Checkers.h"
+#include "Objects/Window.h"
 
-
-//using namespace sf;
-
-sf::RenderWindow window(sf::VideoMode(1500, 1500), "checker");
-bool display = true;
 
 int main()
 {
-    window.setFramerateLimit(60);
-
-    bool step (false);
-    bool firstBoard = true;
-    bool firstCheckers = true;
-    Board board;
-    Checkers checkers;
-    Checker* currentChecker = nullptr;
-
-    // Главный цикл приложения. Выполняется, пока открыто окно
-    while (window.isOpen())
-    {
-        if (firstBoard) {
-            board.make();
-            firstBoard = false;
-        }
-
-        if (firstCheckers) {
-            checkers.make();
-            firstCheckers = false;
-        }
-
-        // Обрабатываем очередь событий в цикле
-        sf::Event event{};
-        while (window.pollEvent(event))
-        {
-            // Пользователь нажал на «крестик» и хочет закрыть окно?
-            if (event.type == sf::Event::Closed)
-                // тогда закрываем его
-                window.close();
-
-            if (event.type == sf::Event::MouseButtonPressed){
-                if (event.key.code == sf::Mouse::Left){
-                    if (!currentChecker) {
-                        currentChecker = checkers.showDots(step);
-                        if (currentChecker){
-                            step = !step;
-                        }
-                    } else {
-                        currentChecker = checkers.move(currentChecker);
-                    }
-                }
-            }
-        }
-
-
-        // Отрисовка окна
-        if (display) {
-//            window.clear();
-            board.draw();
-            checkers.draw();
-            window.display();
-            display = false;
-        }
-    }
-
+    Window window;
     return 0;
 }

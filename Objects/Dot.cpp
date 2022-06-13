@@ -3,8 +3,9 @@
 //
 
 #include "Dot.h"
+#include "Window.h"
 
-extern sf::RenderWindow window;
+//extern sf::RenderWindow window;
 sf::Color color(sf::Color(50, 50, 50));
 
 void Dot::setLeftDown(int x, int y, Dot* father) {
@@ -39,22 +40,22 @@ void Dot::setRightUp(int x, int y, Dot* father) {
     rightUp->_father = father;
 }
 
-void Dot::draw() {
+void Dot::draw(sf::RenderWindow& window) {
     if (leftUp){
         window.draw(leftUp->dot);
-        leftUp->draw();
+        leftUp->draw(window);
     }
     if (leftDown){
         window.draw(leftDown->dot);
-        leftDown->draw();
+        leftDown->draw(window);
     }
     if (rightUp){
         window.draw(rightUp->dot);
-        rightUp->draw();
+        rightUp->draw(window);
     }
     if (rightDown){
         window.draw(rightDown->dot);
-        rightDown->draw();
+        rightDown->draw(window);
     }
 }
 

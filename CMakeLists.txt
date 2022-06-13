@@ -13,7 +13,7 @@ add_executable(checkers
         Objects/Checkers.cpp
         Objects/Checkers.h
         Objects/Dot.cpp
-        Objects/Dot.h Objects/Checker.h Objects/Checker.cpp)
+        Objects/Dot.h Objects/Checker.h Objects/Checker.cpp Objects/Window.cpp Objects/Window.h)
 
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 include_directories(${SFML_INCLUDE_DIRS})

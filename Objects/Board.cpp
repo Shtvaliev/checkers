@@ -4,34 +4,52 @@
 
 #include "Board.h"
 
-extern sf::RenderWindow window;
 
-void Board::make() {
+sf::Vector2i posBoard(const int Wight,
+                 const int Step, 
+                 const int X0, 
+                 const int Y0, 
+                 int i){
+    sf::Vector2i answer((i % Wight)*Step + X0, (i / Wight)*Step + Y0);
+    return answer;
+}
 
-    const int MaxTiles = 64;
-    for (int i=0; i<MaxTiles; ++i){
-        tiles[i].setRadius(130);
-        tiles[i].setPointCount(4);
-        tiles[i].rotate(45);
-        tiles[i].setPosition((i % 8)*182 + 110, (i / 8)*182 - 70);
-        if (i / 8 % 2 == 0){
-            if (i % 2 == 0) {
-                tiles[i].setFillColor(sf::Color(200, 200, 200));
-            } else {
-                tiles[i].setFillColor(sf::Color(50, 50, 50));
-            }
+
+sf::Color color(int i, const int Wight){
+    if (i / Wight % 2 == 0){
+        if (i % 2 == 0) {
+            return {200, 200, 200};
         } else {
-            if (i % 2 == 0) {
-                tiles[i].setFillColor(sf::Color(50, 50, 50));
-            } else {
-                tiles[i].setFillColor(sf::Color(200, 200, 200));
-            }
+            return {50, 50, 50};
+        }
+    } else {
+        if (i % 2 == 0) {
+            return {50, 50, 50};
+        } else {
+            return {200, 200, 200};
         }
     }
 }
 
-void Board::draw() {
-    for (sf::CircleShape& it : tiles){
+
+void Board::make(const int Wight, const int Step) {
+    const int MaxTiles = 64;
+    const int X0 = 110;
+    const int Y0 = -70;
+    
+    for (int i=0; i<MaxTiles; ++i){
+        _tiles[i].setRadius(130);
+        _tiles[i].setPointCount(4);
+        _tiles[i].rotate(45);
+        _tiles[i].setPosition(posBoard(Wight, Step, X0, Y0, i).x,
+                              posBoard(Wight, Step, X0, Y0, i).y);
+        _tiles[i].setFillColor(color(i, Wight));
+    }
+}
+
+
+void Board::draw(sf::RenderWindow& window) {
+    for (sf::CircleShape& it : _tiles){
         window.draw(it);
     }
 }
