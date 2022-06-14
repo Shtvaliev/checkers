@@ -3,20 +3,30 @@ project(checkers)
 
 set(CMAKE_CXX_STANDARD 23)
 
-set(SFML_INCLUDE_DIR "/usr/local/Cellar/sfml/2.5.1_1/include")
-set(SFML_LIBRARY_DIR "/usr/local/Cellar/sfml/2.5.1_1/lib")
+#set(SFML_INCLUDE_DIR "/usr/local/Cellar/sfml/2.5.1_1/include")
+#set(SFML_LIBRARY_DIR "/usr/local/Cellar/sfml/2.5.1_1/lib")
+
 
 add_executable(checkers
         main.cpp
         Objects/Board.cpp
-        Objects/Board.h
         Objects/Checkers.cpp
-        Objects/Checkers.h
         Objects/Dot.cpp
-        Objects/Dot.h Objects/Checker.h Objects/Checker.cpp Objects/Window.cpp Objects/Window.h)
+        Objects/Checker.cpp
+        Objects/Window.cpp
+        )
 
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
 include_directories(${SFML_INCLUDE_DIRS})
-target_link_libraries(checkers sfml-system sfml-window sfml-graphics sfml-audio sfml-network)
+target_link_libraries(checkers sfml-system sfml-window
+        sfml-graphics sfml-audio sfml-network
+#        doctest
+#        default
+        )
 
+enable_testing()
+
+add_subdirectory(Test)
+add_subdirectory(Doctest)
+#add_test(NAME Test COMMAND test --force-colors -d -ldefault)
 #документация и тесты

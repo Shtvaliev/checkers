@@ -19,3 +19,9 @@ public:
     void setDot(bool step, Dot* dot, Dot* fa);
     void cleanUp(Dot* dot);
 };
+
+sf::Vector2i posChecker(int i,
+                        int Wight,
+                        const int Step,
+                        const int dX,
+                        const int dY);

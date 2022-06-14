@@ -21,6 +21,7 @@ private:
     const int _Step;// = 182;
 public:
     Window();
+    void Do();
     sf::RenderWindow* getWindow(){ return &_window;}
     void setDisplay(bool f) { _display = f;}
 };
