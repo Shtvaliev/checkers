@@ -141,143 +141,143 @@ Checker * Checkers::showDots(bool step,
     const int dXY(120);
     
 //    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-    for (Checker& it : _checker){
-        if (it.getChecker()->getGlobalBounds().contains(mousePos.x,
-                                                        mousePos.y)){
-            if (!it.getColor() && !step){
-                int f(1);
-                bool ifRight(false);
-                for (Checker& it2 : _checker) {
-                    if (it2.getChecker()->getGlobalBounds().
-                    contains(it.getChecker()->getPosition().x - Step + dXY,
-                             it.getChecker()->getPosition().y + Step + dXY)) {
-                        f = 2;
-                        for (Checker& it3 : _checker) {
-                            if (it3.getChecker()->getGlobalBounds().
-                                contains(it.getChecker()->
-                                                 getPosition().x - f * Step + dXY,
-                                         it.getChecker()->
-                                                 getPosition().y + f * Step +
-                                                                        dXY)) {
-                                f = 0;
-                            }
-                        }
-                    }
-                }
-                if (f) {
-                    it.setDot("leftDown", it.getChecker()->
-                                                    getPosition().x - f*Step,
-                                            it.getChecker()->
-                                                    getPosition().y + f*Step,
-                                            it.getDot());
-                    display = true;
-                }
-
-                f = 1;
-                for (Checker& it2 : _checker) {
-                    if (it2.getChecker()->getGlobalBounds().
+for (Checker& it : _checker){
+    if (it.getChecker()->getGlobalBounds().contains(mousePos.x,
+                                                    mousePos.y)){
+        if (!it.getColor() && !step){
+            int f(1);
+            bool ifRight(false);
+            for (Checker& it2 : _checker) {
+                if (it2.getChecker()->getGlobalBounds().
+                contains(it.getChecker()->getPosition().x - Step + dXY,
+                         it.getChecker()->getPosition().y + Step + dXY)) {
+                    f = 2;
+                    for (Checker& it3 : _checker) {
+                        if (it3.getChecker()->getGlobalBounds().
                             contains(it.getChecker()->
-                                            getPosition().x + Step + dXY,
+                                             getPosition().x - f * Step + dXY,
                                      it.getChecker()->
-                                            getPosition().y + Step + dXY)) {
-                        f = 2;
-                        for (Checker& it3 : _checker) {
-                            if (it3.getChecker()->getGlobalBounds().
-                                contains(it.getChecker()->
-                                                 getPosition().x + f * Step + dXY,
-                                         it.getChecker()->
-                                                 getPosition().y + f * Step +
-                                                                        dXY)) {
-                                f = 0;
-                            }
+                                             getPosition().y + f * Step +
+                                                                    dXY)) {
+                            f = 0;
                         }
                     }
                 }
-                if (f) {
-                    it.setDot("rightDown",
-                              it.getChecker()->getPosition().x + f*Step,
-                              it.getChecker()->getPosition().y + f*Step,
-                              it.getDot());
-                    display = true;
-                }
-
-                if(!it.getDot()->getLeftUp() &&
-                        !it.getDot()->getLeftDown() &&
-                        !it.getDot()->getRightUp() &&
-                        !it.getDot()->getRightDown()){
-                    return nullptr;
-                } else return &it;
-
+            }
+            if (f) {
+                it.setDot("leftDown", it.getChecker()->
+                                                getPosition().x - f*Step,
+                                        it.getChecker()->
+                                                getPosition().y + f*Step,
+                                        it.getDot());
+                display = true;
             }
 
-
-            else if (it.getColor() && step){
-                int f = 1;
-                for (Checker& it2 : _checker) {
-                    if (it2.getChecker()->getGlobalBounds().
+            f = 1;
+            for (Checker& it2 : _checker) {
+                if (it2.getChecker()->getGlobalBounds().
                         contains(it.getChecker()->
-                                            getPosition().x - Step + dXY,
+                                        getPosition().x + Step + dXY,
                                  it.getChecker()->
-                                            getPosition().y - Step + dXY)) {
-                        f = 2;
-                        for (Checker& it3 : _checker) {
-                            if (it3.getChecker()->getGlobalBounds().
-                                contains(it.getChecker()->
-                                                 getPosition().x - f * Step + dXY,
-                                         it.getChecker()->
-                                                 getPosition().y - f * Step +
-                                                                        dXY)) {
-                                f = 0;
-                            }
-                        }
-                    }
-                }
-                if (f) {
-                    it.setDot("leftUp", it.getChecker()->
-                                      getPosition().x - f*Step,
-                              it.getChecker()->
-                                      getPosition().y - f*Step,
-                              it.getDot());
-                    display = true;
-                }
-
-                f = 1;
-                for (Checker& it2 : _checker) {
-                    if (it2.getChecker()->getGlobalBounds().
+                                        getPosition().y + Step + dXY)) {
+                    f = 2;
+                    for (Checker& it3 : _checker) {
+                        if (it3.getChecker()->getGlobalBounds().
                             contains(it.getChecker()->
-                                             getPosition().x + Step + dXY,
+                                             getPosition().x + f * Step + dXY,
                                      it.getChecker()->
-                                             getPosition().y - Step + dXY)) {
-                        f = 2;
-                        for (Checker& it3 : _checker) {
-                            if (it3.getChecker()->getGlobalBounds().
-                                contains(it.getChecker()->
-                                                 getPosition().x + f * Step + dXY,
-                                         it.getChecker()->
-                                                 getPosition().y - f * Step +
-                                                                        dXY)) {
-                                f = 0;
-                            }
+                                             getPosition().y + f * Step +
+                                                                    dXY)) {
+                            f = 0;
                         }
                     }
                 }
-                if (f) {
-                    it.setDot("rightUp",
-                              it.getChecker()->getPosition().x + f*Step,
-                              it.getChecker()->getPosition().y - f*Step,
-                              it.getDot());
-                    display = true;
-                }
-                if(!it.getDot()->getLeftUp() &&
-                   !it.getDot()->getLeftDown() &&
-                   !it.getDot()->getRightUp() &&
-                   !it.getDot()->getRightDown()){
-                    return nullptr;
-                } else return &it;
             }
+            if (f) {
+                it.setDot("rightDown",
+                          it.getChecker()->getPosition().x + f*Step,
+                          it.getChecker()->getPosition().y + f*Step,
+                          it.getDot());
+                display = true;
+            }
+
+            if(!it.getDot()->getLeftUp() &&
+                    !it.getDot()->getLeftDown() &&
+                    !it.getDot()->getRightUp() &&
+                    !it.getDot()->getRightDown()){
+                return nullptr;
+            } else return &it;
+
+        }
+
+
+        else if (it.getColor() && step){
+            int f = 1;
+            for (Checker& it2 : _checker) {
+                if (it2.getChecker()->getGlobalBounds().
+                    contains(it.getChecker()->
+                                        getPosition().x - Step + dXY,
+                             it.getChecker()->
+                                        getPosition().y - Step + dXY)) {
+                    f = 2;
+                    for (Checker& it3 : _checker) {
+                        if (it3.getChecker()->getGlobalBounds().
+                            contains(it.getChecker()->
+                                             getPosition().x - f * Step + dXY,
+                                     it.getChecker()->
+                                             getPosition().y - f * Step +
+                                                                    dXY)) {
+                            f = 0;
+                        }
+                    }
+                }
+            }
+            if (f) {
+                it.setDot("leftUp", it.getChecker()->
+                                  getPosition().x - f*Step,
+                          it.getChecker()->
+                                  getPosition().y - f*Step,
+                          it.getDot());
+                display = true;
+            }
+
+            f = 1;
+            for (Checker& it2 : _checker) {
+                if (it2.getChecker()->getGlobalBounds().
+                        contains(it.getChecker()->
+                                         getPosition().x + Step + dXY,
+                                 it.getChecker()->
+                                         getPosition().y - Step + dXY)) {
+                    f = 2;
+                    for (Checker& it3 : _checker) {
+                        if (it3.getChecker()->getGlobalBounds().
+                            contains(it.getChecker()->
+                                             getPosition().x + f * Step + dXY,
+                                     it.getChecker()->
+                                             getPosition().y - f * Step +
+                                                                    dXY)) {
+                            f = 0;
+                        }
+                    }
+                }
+            }
+            if (f) {
+                it.setDot("rightUp",
+                          it.getChecker()->getPosition().x + f*Step,
+                          it.getChecker()->getPosition().y - f*Step,
+                          it.getDot());
+                display = true;
+            }
+            if(!it.getDot()->getLeftUp() &&
+               !it.getDot()->getLeftDown() &&
+               !it.getDot()->getRightUp() &&
+               !it.getDot()->getRightDown()){
+                return nullptr;
+            } else return &it;
         }
     }
-    return nullptr;
+}
+return nullptr;
 }
 
 
