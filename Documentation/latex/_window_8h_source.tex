@@ -1,0 +1,30 @@
+\hypertarget{_window_8h_source}{}\doxysection{Window.\+h}
+\label{_window_8h_source}\index{Objects/Window.h@{Objects/Window.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Board.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Checkers.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_window}{Window}}\{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     sf::RenderWindow \_window; }
+\DoxyCodeLine{15     \textcolor{keywordtype}{bool} \_display; }
+\DoxyCodeLine{16     \textcolor{keywordtype}{bool} \_step; }
+\DoxyCodeLine{17     \textcolor{keywordtype}{bool} \_firstBoard; }
+\DoxyCodeLine{18     \textcolor{keywordtype}{bool} \_firstCheckers; }
+\DoxyCodeLine{19     \mbox{\hyperlink{class_board}{Board}} \_board; }
+\DoxyCodeLine{20     \mbox{\hyperlink{class_checkers}{Checkers}} \_checkers; }
+\DoxyCodeLine{21     \mbox{\hyperlink{class_checker}{Checker}}* \_currentChecker; }
+\DoxyCodeLine{22     \textcolor{keyword}{const} \textcolor{keywordtype}{int} \_Wight; }
+\DoxyCodeLine{23     \textcolor{keyword}{const} \textcolor{keywordtype}{int} \_Step;}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_window_a74e6087da23d3c24e9fac0245e5ec92c}{Window}}();}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_window_ac8b9c205bb0881bf28c8a2486830bb1b}{Do}}();}
+\DoxyCodeLine{41     sf::RenderWindow* \mbox{\hyperlink{class_window_ac0df50846bc0bcdb7dc804ef356da244}{getWindow}}()\{ \textcolor{keywordflow}{return} \&\_window;\}}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_window_aec1355e11b7d52b47939c7def0fa8e91}{setDisplay}}(\textcolor{keywordtype}{bool} f) \{ \_display = f;\}}
+\DoxyCodeLine{49 \};}
+
+\end{DoxyCode}

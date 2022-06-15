@@ -6,13 +6,13 @@
 #include "Window.h"
 
 //extern sf::RenderWindow window;
-sf::Color color(sf::Color(50, 50, 50));
+sf::Color dotColor(sf::Color(50, 50, 50));
 
 void Dot::setLeftDown(int x, int y, Dot* father) {
     leftDown = std::make_unique<Dot>();
     leftDown->dot.setRadius(50);
     leftDown->dot.setPosition(x + 25, y + 25);
-    leftDown->dot.setFillColor(color);
+    leftDown->dot.setFillColor(dotColor);
     leftDown->_father = father;
 }
 
@@ -20,7 +20,7 @@ void Dot::setRightDown(int x, int y, Dot* father) {
     rightDown = std::make_unique<Dot>();
     rightDown->dot.setRadius(50);
     rightDown->dot.setPosition(x + 25, y + 25);
-    rightDown->dot.setFillColor(color);
+    rightDown->dot.setFillColor(dotColor);
     rightDown->_father = father;
 }
 
@@ -28,7 +28,7 @@ void Dot::setLeftUp(int x, int y, Dot* father) {
     leftUp = std::make_unique<Dot>();
     leftUp->dot.setRadius(50);
     leftUp->dot.setPosition(x + 25, y + 25);
-    leftUp->dot.setFillColor(color);
+    leftUp->dot.setFillColor(dotColor);
     leftUp->_father = father;
 }
 
@@ -36,7 +36,7 @@ void Dot::setRightUp(int x, int y, Dot* father) {
     rightUp = std::make_unique<Dot>();
     rightUp->dot.setRadius(50);
     rightUp->dot.setPosition(x + 25, y + 25);
-    rightUp->dot.setFillColor(color);
+    rightUp->dot.setFillColor(dotColor);
     rightUp->_father = father;
 }
 

@@ -9,14 +9,20 @@ Window::Window() : _window(sf::VideoMode(1500,
                                                 1500),
                                                 "_checker"),
                   _display(true),
-                  _firstBoard(true),
-                  _firstCheckers(true),
+                  _step(false),
+                   _firstBoard(true),
+                   _firstCheckers(true),
+                   _board(),
+                   _checkers(),
                   _currentChecker(nullptr),
                   _Wight(8),
                   _Step(182)
 {
     _window.setFramerateLimit(60);
+}
 
+
+void Window::Do() {
     while (_window.isOpen())
     {
         if (_firstBoard) {
@@ -44,7 +50,8 @@ Window::Window() : _window(sf::VideoMode(1500,
                         _currentChecker = _checkers.showDots(_step,
                                                              _window,
                                                              _display,
-                                                             _Step);
+                                                             _Step,
+                         sf::Mouse::getPosition(_window));
                         if (_currentChecker){
                             _step = !_step;
                         }

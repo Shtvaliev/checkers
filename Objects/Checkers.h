@@ -15,7 +15,14 @@ public:
     Checker* showDots(bool step,
                       sf::RenderWindow& window,
                       bool& display,
-                      const int Step);
+                      const int Step,
+                      sf::Vector2i mousePos);
     void setDot(bool step, Dot* dot, Dot* fa);
     void cleanUp(Dot* dot);
 };
+
+sf::Vector2i posChecker(int i,
+                        int Wight,
+                        const int Step,
+                        const int dX,
+                        const int dY);

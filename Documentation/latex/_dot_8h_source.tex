@@ -1,0 +1,44 @@
+\hypertarget{_dot_8h_source}{}\doxysection{Dot.\+h}
+\label{_dot_8h_source}\index{Objects/Dot.h@{Objects/Dot.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{comment}{//\#include "{}Checkers.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{4 \textcolor{comment}{//\#include "{}Checkers.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_dot}{Dot}} \{}
+\DoxyCodeLine{7 \textcolor{keyword}{private}:}
+\DoxyCodeLine{8     sf::CircleShape dot;}
+\DoxyCodeLine{9     std::unique\_ptr<Dot> leftUp, leftDown,}
+\DoxyCodeLine{10                                     rightUp, rightDown;}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_dot}{Dot}}* \_father;}
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_dot}{Dot}}() : dot(),}
+\DoxyCodeLine{14             leftDown(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{15             leftUp(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{16             rightDown(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{17             rightUp(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{18             \_father(\textcolor{keyword}{nullptr}) \{\}}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_dot}{Dot}}(\mbox{\hyperlink{class_dot}{Dot}} \textcolor{keyword}{const} \&it) : dot(it.dot),}
+\DoxyCodeLine{20                         leftUp(it.leftUp.get()),}
+\DoxyCodeLine{21                         leftDown(it.leftDown.get()),}
+\DoxyCodeLine{22                         rightDown(it.rightDown.get()),}
+\DoxyCodeLine{23                         rightUp(it.rightUp.get()) \{ \_father = it.\_father;\}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} setLeftUp(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_dot}{Dot}}* getLeftUp() \{\textcolor{keywordflow}{return} leftUp.get();\}}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} setLeftDown(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_dot}{Dot}}* getLeftDown() \{\textcolor{keywordflow}{return} leftDown.get();\}}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} setRightUp(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_dot}{Dot}}* getRightUp() \{\textcolor{keywordflow}{return} rightUp.get();\}}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} setRightDown(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_dot}{Dot}}* getRightDown() \{\textcolor{keywordflow}{return} rightDown.get();\}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} set() \{\}}
+\DoxyCodeLine{33     sf::CircleShape* getDot() \{\textcolor{keywordflow}{return} \&dot;\}}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} resetChildren();}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_dot}{Dot}}* getFather() \{ \textcolor{keywordflow}{return} \_father;\}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} draw(sf::RenderWindow\& window);}
+\DoxyCodeLine{38 \};}
+
+\end{DoxyCode}

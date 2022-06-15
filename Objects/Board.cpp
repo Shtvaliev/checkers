@@ -1,7 +1,3 @@
-//
-// Created by Шамиль Валиев on 14.05.2022.
-//
-
 #include "Board.h"
 
 
