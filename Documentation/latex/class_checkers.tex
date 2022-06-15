@@ -1,26 +1,128 @@
 \hypertarget{class_checkers}{}\doxysection{Checkers Class Reference}
 \label{class_checkers}\index{Checkers@{Checkers}}
+
+
+\mbox{\hyperlink{class_checkers}{Checkers}} object class.  
+
+
+
+
+{\ttfamily \#include $<$Checkers.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_checkers_ae9d02605814b45bef8936f794ec4e4a9}\label{class_checkers_ae9d02605814b45bef8936f794ec4e4a9}} 
-void {\bfseries make} (int wight, int step)
-\item 
-\mbox{\Hypertarget{class_checkers_af148110c7a2d4378a4d8ca3227f8666c}\label{class_checkers_af148110c7a2d4378a4d8ca3227f8666c}} 
-\mbox{\hyperlink{class_checker}{Checker}} $\ast$ {\bfseries move} (\mbox{\hyperlink{class_checker}{Checker}} $\ast$ch, sf\+::\+Render\+Window \&window, bool \&display)
-\item 
-\mbox{\Hypertarget{class_checkers_a92f2ed6f5106ff1845d894a41a4c956b}\label{class_checkers_a92f2ed6f5106ff1845d894a41a4c956b}} 
-void {\bfseries draw} (sf\+::\+Render\+Window \&window)
-\item 
-\mbox{\Hypertarget{class_checkers_a9e63a9bd98fc52d4cede38cc15467766}\label{class_checkers_a9e63a9bd98fc52d4cede38cc15467766}} 
-\mbox{\hyperlink{class_checker}{Checker}} $\ast$ {\bfseries show\+Dots} (bool step, sf\+::\+Render\+Window \&window, bool \&display, const int Step, sf\+::\+Vector2i mouse\+Pos)
-\item 
-\mbox{\Hypertarget{class_checkers_a0999df27aa1a5a9854edb5567011ac17}\label{class_checkers_a0999df27aa1a5a9854edb5567011ac17}} 
-void {\bfseries set\+Dot} (bool step, \mbox{\hyperlink{class_dot}{Dot}} $\ast$dot, \mbox{\hyperlink{class_dot}{Dot}} $\ast$fa)
-\item 
+void \mbox{\hyperlink{class_checkers_ae9d02605814b45bef8936f794ec4e4a9}{make}} (int wight, int step)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_checkers}{Checkers}} maker. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_checker}{Checker}} $\ast$ \mbox{\hyperlink{class_checkers_af148110c7a2d4378a4d8ca3227f8666c}{move}} (\mbox{\hyperlink{class_checker}{Checker}} $\ast$ch, sf\+::\+Render\+Window \&window, bool \&display)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_checker}{Checker}} mover. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_checkers_a92f2ed6f5106ff1845d894a41a4c956b}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draw checker. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_checker}{Checker}} $\ast$ \mbox{\hyperlink{class_checkers_a9e63a9bd98fc52d4cede38cc15467766}{show\+Dots}} (bool step, sf\+::\+Render\+Window \&window, bool \&display, const int Step, sf\+::\+Vector2i mouse\+Pos)
+\begin{DoxyCompactList}\small\item\em Context helper. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_checkers_a4869ffbfc1efe83d6b7cbbb64e893f36}{clean\+Up}} (\mbox{\hyperlink{class_dot}{Dot}} $\ast$dot)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_dot}{Dot}}\textquotesingle{}s deleter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_checkers}{Checkers}} object class. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_checkers_a4869ffbfc1efe83d6b7cbbb64e893f36}\label{class_checkers_a4869ffbfc1efe83d6b7cbbb64e893f36}} 
-void {\bfseries clean\+Up} (\mbox{\hyperlink{class_dot}{Dot}} $\ast$dot)
-\end{DoxyCompactItemize}
+\index{Checkers@{Checkers}!cleanUp@{cleanUp}}
+\index{cleanUp@{cleanUp}!Checkers@{Checkers}}
+\doxysubsubsection{\texorpdfstring{cleanUp()}{cleanUp()}}
+{\footnotesize\ttfamily void Checkers\+::clean\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dot}{Dot}} $\ast$}]{dot }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_dot}{Dot}}\textquotesingle{}s deleter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dot} & parent\textquotesingle{}s dot pointer\\
+\hline
+\end{DoxyParams}
+Delete all helper dots after using \mbox{\Hypertarget{class_checkers_a92f2ed6f5106ff1845d894a41a4c956b}\label{class_checkers_a92f2ed6f5106ff1845d894a41a4c956b}} 
+\index{Checkers@{Checkers}!draw@{draw}}
+\index{draw@{draw}!Checkers@{Checkers}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Checkers\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Draw checker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & main game window\\
+\hline
+\end{DoxyParams}
+Draws checker on the main game window \mbox{\Hypertarget{class_checkers_ae9d02605814b45bef8936f794ec4e4a9}\label{class_checkers_ae9d02605814b45bef8936f794ec4e4a9}} 
+\index{Checkers@{Checkers}!make@{make}}
+\index{make@{make}!Checkers@{Checkers}}
+\doxysubsubsection{\texorpdfstring{make()}{make()}}
+{\footnotesize\ttfamily void Checkers\+::make (\begin{DoxyParamCaption}\item[{int}]{wight,  }\item[{int}]{step }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_checkers}{Checkers}} maker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wight} & number of checkers in one row \\
+\hline
+{\em step} & distance between checkers\\
+\hline
+\end{DoxyParams}
+Configure checker\textquotesingle{}s sprites \mbox{\Hypertarget{class_checkers_af148110c7a2d4378a4d8ca3227f8666c}\label{class_checkers_af148110c7a2d4378a4d8ca3227f8666c}} 
+\index{Checkers@{Checkers}!move@{move}}
+\index{move@{move}!Checkers@{Checkers}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_checker}{Checker}} $\ast$ Checkers\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_checker}{Checker}} $\ast$}]{ch,  }\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{bool \&}]{display }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_checker}{Checker}} mover. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & pointer to the checker that will be moved \\
+\hline
+{\em window} & main game window \\
+\hline
+{\em display} & for message about necessary to display changes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to moved checker
+\end{DoxyReturn}
+Move checker to the new position \mbox{\Hypertarget{class_checkers_a9e63a9bd98fc52d4cede38cc15467766}\label{class_checkers_a9e63a9bd98fc52d4cede38cc15467766}} 
+\index{Checkers@{Checkers}!showDots@{showDots}}
+\index{showDots@{showDots}!Checkers@{Checkers}}
+\doxysubsubsection{\texorpdfstring{showDots()}{showDots()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_checker}{Checker}} $\ast$ Checkers\+::show\+Dots (\begin{DoxyParamCaption}\item[{bool}]{step,  }\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{bool \&}]{display,  }\item[{const int}]{Step,  }\item[{sf\+::\+Vector2i}]{mouse\+Pos }\end{DoxyParamCaption})}
+
+
+
+Context helper. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em step} & distance between checkers \\
+\hline
+{\em window} & main game window \\
+\hline
+{\em display} & for message about necessary to display changes \\
+\hline
+{\em Step} & distance between checkers \\
+\hline
+{\em mouse\+Pos} & mouse position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pointer on checker that was pressed 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

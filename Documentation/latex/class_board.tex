@@ -1,15 +1,60 @@
 \hypertarget{class_board}{}\doxysection{Board Class Reference}
 \label{class_board}\index{Board@{Board}}
+
+
+\mbox{\hyperlink{class_board}{Board}} object class.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_board_ad18d9c49181ecbd08c8830d8950ffcf0}\label{class_board_ad18d9c49181ecbd08c8830d8950ffcf0}} 
-void {\bfseries make} (int wight, int step)
-\item 
-\mbox{\Hypertarget{class_board_a1fa67ca04a50dc4a17428848413b1549}\label{class_board_a1fa67ca04a50dc4a17428848413b1549}} 
-void {\bfseries draw} (sf\+::\+Render\+Window \&window)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_board_ad18d9c49181ecbd08c8830d8950ffcf0}{make}} (int wight, int step)
+\begin{DoxyCompactList}\small\item\em Configure tiles sprites. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a1fa67ca04a50dc4a17428848413b1549}{draw}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Draw tiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_board}{Board}} object class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_board_a1fa67ca04a50dc4a17428848413b1549}\label{class_board_a1fa67ca04a50dc4a17428848413b1549}} 
+\index{Board@{Board}!draw@{draw}}
+\index{draw@{draw}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Board\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Draw tiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & main game window\\
+\hline
+\end{DoxyParams}
+Draws all tiles on the main game window \mbox{\Hypertarget{class_board_ad18d9c49181ecbd08c8830d8950ffcf0}\label{class_board_ad18d9c49181ecbd08c8830d8950ffcf0}} 
+\index{Board@{Board}!make@{make}}
+\index{make@{make}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{make()}{make()}}
+{\footnotesize\ttfamily void Board\+::make (\begin{DoxyParamCaption}\item[{int}]{wight,  }\item[{int}]{step }\end{DoxyParamCaption})}
+
+
+
+Configure tiles sprites. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wight} & number of tiles in one row \\
+\hline
+{\em step} & distance between tiles\\
+\hline
+\end{DoxyParams}
+Set parameters of each tile 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

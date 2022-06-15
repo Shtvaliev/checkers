@@ -3,42 +3,39 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{2 \textcolor{comment}{//\#include "{}Checkers.h"{}}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
-\DoxyCodeLine{4 \textcolor{comment}{//\#include "{}Checkers.h"{}}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_dot}{Dot}} \{}
-\DoxyCodeLine{7 \textcolor{keyword}{private}:}
-\DoxyCodeLine{8     sf::CircleShape dot;}
-\DoxyCodeLine{9     std::unique\_ptr<Dot> leftUp, leftDown,}
-\DoxyCodeLine{10                                     rightUp, rightDown;}
-\DoxyCodeLine{11     \mbox{\hyperlink{class_dot}{Dot}}* \_father;}
-\DoxyCodeLine{12 \textcolor{keyword}{public}:}
-\DoxyCodeLine{13     \mbox{\hyperlink{class_dot}{Dot}}() : dot(),}
-\DoxyCodeLine{14             leftDown(\textcolor{keyword}{nullptr}),}
-\DoxyCodeLine{15             leftUp(\textcolor{keyword}{nullptr}),}
-\DoxyCodeLine{16             rightDown(\textcolor{keyword}{nullptr}),}
-\DoxyCodeLine{17             rightUp(\textcolor{keyword}{nullptr}),}
-\DoxyCodeLine{18             \_father(\textcolor{keyword}{nullptr}) \{\}}
-\DoxyCodeLine{19     \mbox{\hyperlink{class_dot}{Dot}}(\mbox{\hyperlink{class_dot}{Dot}} \textcolor{keyword}{const} \&it) : dot(it.dot),}
-\DoxyCodeLine{20                         leftUp(it.leftUp.get()),}
-\DoxyCodeLine{21                         leftDown(it.leftDown.get()),}
-\DoxyCodeLine{22                         rightDown(it.rightDown.get()),}
-\DoxyCodeLine{23                         rightUp(it.rightUp.get()) \{ \_father = it.\_father;\}}
-\DoxyCodeLine{24     \textcolor{keywordtype}{void} setLeftUp(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
-\DoxyCodeLine{25     \mbox{\hyperlink{class_dot}{Dot}}* getLeftUp() \{\textcolor{keywordflow}{return} leftUp.get();\}}
-\DoxyCodeLine{26     \textcolor{keywordtype}{void} setLeftDown(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
-\DoxyCodeLine{27     \mbox{\hyperlink{class_dot}{Dot}}* getLeftDown() \{\textcolor{keywordflow}{return} leftDown.get();\}}
-\DoxyCodeLine{28     \textcolor{keywordtype}{void} setRightUp(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
-\DoxyCodeLine{29     \mbox{\hyperlink{class_dot}{Dot}}* getRightUp() \{\textcolor{keywordflow}{return} rightUp.get();\}}
-\DoxyCodeLine{30     \textcolor{keywordtype}{void} setRightDown(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
-\DoxyCodeLine{31     \mbox{\hyperlink{class_dot}{Dot}}* getRightDown() \{\textcolor{keywordflow}{return} rightDown.get();\}}
-\DoxyCodeLine{32     \textcolor{keywordtype}{void} set() \{\}}
-\DoxyCodeLine{33     sf::CircleShape* getDot() \{\textcolor{keywordflow}{return} \&dot;\}}
-\DoxyCodeLine{34     \textcolor{keywordtype}{void} resetChildren();}
-\DoxyCodeLine{35     \mbox{\hyperlink{class_dot}{Dot}}* getFather() \{ \textcolor{keywordflow}{return} \_father;\}}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37     \textcolor{keywordtype}{void} draw(sf::RenderWindow\& window);}
-\DoxyCodeLine{38 \};}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_dot}{Dot}} \{}
+\DoxyCodeLine{9 \textcolor{keyword}{private}:}
+\DoxyCodeLine{10     sf::CircleShape dot; }
+\DoxyCodeLine{11     std::unique\_ptr<Dot> leftUp, leftDown,}
+\DoxyCodeLine{12                                     rightUp, rightDown; }
+\DoxyCodeLine{13     \mbox{\hyperlink{class_dot}{Dot}}* \_father; }
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_dot_a1de0408a16ffbccad057952afd9c852d}{Dot}}() : dot(),}
+\DoxyCodeLine{19             leftDown(nullptr),}
+\DoxyCodeLine{20             leftUp(nullptr),}
+\DoxyCodeLine{21             rightDown(nullptr),}
+\DoxyCodeLine{22             rightUp(nullptr),}
+\DoxyCodeLine{23             \_father(nullptr) \{\}}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_dot_a75ce0a0e6bcb788f3a1c8c1f8f6f103c}{Dot}}(\mbox{\hyperlink{class_dot}{Dot}} \textcolor{keyword}{const} \&it) : dot(it.dot),}
+\DoxyCodeLine{29                         leftUp(it.leftUp.get()),}
+\DoxyCodeLine{30                         leftDown(it.leftDown.get()),}
+\DoxyCodeLine{31                         rightDown(it.rightDown.get()),}
+\DoxyCodeLine{32                         rightUp(it.rightUp.get()) \{ \_father = it.\_father;\}}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dot_a8e3091a2c0dce1424d60bfa11fc9066c}{setLeftUp}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
+\DoxyCodeLine{48     \mbox{\hyperlink{class_dot}{Dot}}* \mbox{\hyperlink{class_dot_af9e2ab61d44e3580d8288fd2854787e8}{getLeftUp}}() \{\textcolor{keywordflow}{return} leftUp.get();\}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dot_a610c717751b01478c3b75d0d4fda1177}{setLeftDown}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
+\DoxyCodeLine{64     \mbox{\hyperlink{class_dot}{Dot}}* \mbox{\hyperlink{class_dot_a4c085ffd3edc99e667afb0bb829e154e}{getLeftDown}}() \{\textcolor{keywordflow}{return} leftDown.get();\}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dot_a022b738a1eb318127b179d1e216bed33}{setRightUp}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
+\DoxyCodeLine{80     \mbox{\hyperlink{class_dot}{Dot}}* \mbox{\hyperlink{class_dot_a004d9b4e06983cf93a32a481d8e0465d}{getRightUp}}() \{\textcolor{keywordflow}{return} rightUp.get();\}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dot_a1da515b45638efa3a0066a5cc4e60055}{setRightDown}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \mbox{\hyperlink{class_dot}{Dot}}* father);}
+\DoxyCodeLine{96     \mbox{\hyperlink{class_dot}{Dot}}* \mbox{\hyperlink{class_dot_af798bcb9f4a46dbe6b092b7c606e6af8}{getRightDown}}() \{\textcolor{keywordflow}{return} rightDown.get();\}}
+\DoxyCodeLine{97 \textcolor{comment}{//    void set() \{\}}}
+\DoxyCodeLine{104 \textcolor{comment}{}    sf::CircleShape* \mbox{\hyperlink{class_dot_a83c0c89879efc27f0300e390cdcf8645}{getDot}}() \{\textcolor{keywordflow}{return} \&dot;\}}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dot_aae0122aec2cfaf0035e68f0196038c9a}{resetChildren}}();}
+\DoxyCodeLine{117     \mbox{\hyperlink{class_dot}{Dot}}* \mbox{\hyperlink{class_dot_a259aca33a2e2886f3cb9c44122926e4a}{getFather}}() \{ \textcolor{keywordflow}{return} \_father;\}}
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dot_a0799e92c5ded274cc52aedd43dce42fb}{draw}}(sf::RenderWindow\& window);}
+\DoxyCodeLine{125 \};}
 
 \end{DoxyCode}

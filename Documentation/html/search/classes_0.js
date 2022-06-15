@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['asteroid_0',['Asteroid',['../class_asteroid.html',1,'']]]
+  ['board_0',['Board',['../class_board.html',1,'']]]
 ];
