@@ -1,0 +1,24 @@
+\hypertarget{_board_8h_source}{}\doxysection{Board.\+h}
+\label{_board_8h_source}\index{Objects/Board.h@{Objects/Board.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_board}{Board}}\{}
+\DoxyCodeLine{5 \textcolor{keyword}{private}:}
+\DoxyCodeLine{6     sf::CircleShape \_tiles[64];}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8     \textcolor{keywordtype}{void} make(\textcolor{keywordtype}{int} wight, \textcolor{keywordtype}{int} step);}
+\DoxyCodeLine{9     \textcolor{keywordtype}{void} draw(sf::RenderWindow\& window);}
+\DoxyCodeLine{10 \};}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 sf::Vector2i posBoard(\textcolor{keyword}{const} \textcolor{keywordtype}{int} Wight,}
+\DoxyCodeLine{13                       \textcolor{keyword}{const} \textcolor{keywordtype}{int} Step,}
+\DoxyCodeLine{14                       \textcolor{keyword}{const} \textcolor{keywordtype}{int} X0,}
+\DoxyCodeLine{15                       \textcolor{keyword}{const} \textcolor{keywordtype}{int} Y0,}
+\DoxyCodeLine{16                       \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 sf::Color color(\textcolor{keywordtype}{int} i, \textcolor{keyword}{const} \textcolor{keywordtype}{int} Wight);}
+
+\end{DoxyCode}

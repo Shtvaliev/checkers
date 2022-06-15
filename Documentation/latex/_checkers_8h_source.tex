@@ -1,0 +1,34 @@
+\hypertarget{_checkers_8h_source}{}\doxysection{Checkers.\+h}
+\label{_checkers_8h_source}\index{Objects/Checkers.h@{Objects/Checkers.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Dot.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Checker.h"{}}}
+\DoxyCodeLine{6 \textcolor{comment}{//\#include "{}Window.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_checkers}{Checkers}} \{}
+\DoxyCodeLine{9 \textcolor{keyword}{private}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_checker}{Checker}} \_checker[24];}
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} make(\textcolor{keywordtype}{int} wight, \textcolor{keywordtype}{int} step);}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_checker}{Checker}}* move(\mbox{\hyperlink{class_checker}{Checker}}* ch, sf::RenderWindow\& window, \textcolor{keywordtype}{bool}\& display);}
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} draw(sf::RenderWindow\& window);}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_checker}{Checker}}* showDots(\textcolor{keywordtype}{bool} step,}
+\DoxyCodeLine{16                       sf::RenderWindow\& window,}
+\DoxyCodeLine{17                       \textcolor{keywordtype}{bool}\& display,}
+\DoxyCodeLine{18                       \textcolor{keyword}{const} \textcolor{keywordtype}{int} Step,}
+\DoxyCodeLine{19                       sf::Vector2i mousePos);}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} setDot(\textcolor{keywordtype}{bool} step, \mbox{\hyperlink{class_dot}{Dot}}* dot, \mbox{\hyperlink{class_dot}{Dot}}* fa);}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} cleanUp(\mbox{\hyperlink{class_dot}{Dot}}* dot);}
+\DoxyCodeLine{22 \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 sf::Vector2i posChecker(\textcolor{keywordtype}{int} i,}
+\DoxyCodeLine{25                         \textcolor{keywordtype}{int} Wight,}
+\DoxyCodeLine{26                         \textcolor{keyword}{const} \textcolor{keywordtype}{int} Step,}
+\DoxyCodeLine{27                         \textcolor{keyword}{const} \textcolor{keywordtype}{int} dX,}
+\DoxyCodeLine{28                         \textcolor{keyword}{const} \textcolor{keywordtype}{int} dY);}
+
+\end{DoxyCode}
