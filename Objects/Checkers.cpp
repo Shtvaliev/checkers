@@ -136,10 +136,11 @@ Dot* findDot(Dot* dot, sf::Vector2i mousePos){
 Checker * Checkers::showDots(bool step,
                              sf::RenderWindow& window,
                              bool& display,
-                             const int Step) {
+                             const int Step,
+                             sf::Vector2i mousePos) {
     const int dXY(120);
     
-    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+//    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     for (Checker& it : _checker){
         if (it.getChecker()->getGlobalBounds().contains(mousePos.x,
                                                         mousePos.y)){
