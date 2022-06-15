@@ -18,7 +18,7 @@ private:
     bool _firstCheckers; //!< is it first time of checkers drawing
     Board _board; //!< board object
     Checkers _checkers; //!< checkers object
-    Checker* _currentChecker; //!< save checker that go now
+    Checker* _currentChecker; //!< save _checker that go now
     const int _Wight; //!< wight of board in number of tiles
     const int _Step;//!< number of pixels should be overcame to make a step
 public:

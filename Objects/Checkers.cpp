@@ -100,12 +100,12 @@ Dot* findDot(Dot* dot, sf::Vector2i mousePos){
 }
 
 
-//void Checkers::setDot(bool step, Dot* dot, Dot* fa) {
+//void Checkers::setDot(bool step, Dot* _dot, Dot* fa) {
 //    bool f = false;
 //    for (Checker &it: _checker) {
 //        if (it.getChecker()->getGlobalBounds().
-//                contains(dot->getDot()->getPosition().x - 182 + 10,
-//                         dot->getDot()->getPosition().y + 182 + 10) &&
+//                contains(_dot->getDot()->getPosition().x - 182 + 10,
+//                         _dot->getDot()->getPosition().y + 182 + 10) &&
 //             step != it.getColor()) {
 //            f = true;
 //            for (Checker &it2: _checker) {
@@ -123,10 +123,10 @@ Dot* findDot(Dot* dot, sf::Vector2i mousePos){
 //            }
 //
 //            if (f){
-//                dot->setLeftDown(it.getChecker()->getPosition().x - 182 + 10,
+//                _dot->setLeftDown(it.getChecker()->getPosition().x - 182 + 10,
 //                                 it.getChecker()->getPosition().y + 182 +10,
-//                                 dot);
-////                setDot(step, dot->getLeftDown(), fa);
+//                                 _dot);
+//                setDot(step, _dot->getLeftDown(), fa);
 //            }
 //        }
 //    }

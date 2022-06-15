@@ -3595,12 +3595,12 @@
 \DoxyCodeLine{3591 \mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\& operator<<(\mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\& s, \textcolor{keyword}{const} String\& in) \{ \textcolor{keywordflow}{return} s << in.c\_str(); \}}
 \DoxyCodeLine{3592 }
 \DoxyCodeLine{3593 \textcolor{keyword}{namespace }\{}
-\DoxyCodeLine{3594     \textcolor{keywordtype}{void} color\_to\_stream(\mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\&, Color::Enum) DOCTEST\_BRANCH\_ON\_DISABLED(\{\}, ;)}
+\DoxyCodeLine{3594     \textcolor{keywordtype}{void} _color\_to\_stream(\mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\&, Color::Enum) DOCTEST\_BRANCH\_ON\_DISABLED(\{\}, ;)}
 \DoxyCodeLine{3595 \} \textcolor{comment}{// namespace}}
 \DoxyCodeLine{3596 }
 \DoxyCodeLine{3597 \textcolor{keyword}{namespace }Color \{}
 \DoxyCodeLine{3598     \mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\& operator<<(\mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\& s, Color::Enum code) \{}
-\DoxyCodeLine{3599         color\_to\_stream(s, code);}
+\DoxyCodeLine{3599         _color\_to\_stream(s, code);}
 \DoxyCodeLine{3600         \textcolor{keywordflow}{return} s;}
 \DoxyCodeLine{3601     \}}
 \DoxyCodeLine{3602 \} \textcolor{comment}{// namespace Color}}
@@ -4122,7 +4122,7 @@
 \DoxyCodeLine{4119     \}}
 \DoxyCodeLine{4120 }
 \DoxyCodeLine{4121     DOCTEST\_CLANG\_SUPPRESS\_WARNING\_WITH\_PUSH(\textcolor{stringliteral}{"{}-\/Wdeprecated-\/declarations"{}})}
-\DoxyCodeLine{4122     void color\_to\_stream(std::ostream\& s, Color::Enum code) \{}
+\DoxyCodeLine{4122     void _color\_to\_stream(std::ostream\& s, Color::Enum code) \{}
 \DoxyCodeLine{4123         \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(s);    \textcolor{comment}{// for DOCTEST\_CONFIG\_COLORS\_NONE or DOCTEST\_CONFIG\_COLORS\_WINDOWS}}
 \DoxyCodeLine{4124         \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(code); \textcolor{comment}{// for DOCTEST\_CONFIG\_COLORS\_NONE}}
 \DoxyCodeLine{4125 \textcolor{preprocessor}{\#ifdef DOCTEST\_CONFIG\_COLORS\_ANSI}}
