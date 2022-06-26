@@ -3,9 +3,10 @@
 Создать цифровую реализацию классической игры "шашки" с использованием библиотеки 2D-графики "SFML"
 
 ## Краткое описание
-Классическая игра "шашки" для двоих игроков!
-![](Resources/Gamepay start.png)
-![](Resources/Gameplay game.png)
+Классическая игра "шашки" для двоих игроков
+<img width="740" alt="Gameplay game" src="https://user-images.githubusercontent.com/90838372/175820985-b979f975-ebda-41e0-af34-2a3638bd6cf6.png">
+<img width="737" alt="Gamepay start" src="https://user-images.githubusercontent.com/90838372/175820987-bc790489-124f-4033-8fa4-b253adfe256d.png">
+
 ## Запуск
 Для запуска игры необходимо установить на компьютер графическую библиотеку и скомпилировать проект с помощью CMake
 ## Управление
